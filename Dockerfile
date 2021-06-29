@@ -6,6 +6,7 @@ MAINTAINER Pablo Escobar <pablo.escobarlopez@unibas.ch>
 RUN apt-get update && apt-get install -y \
     poppler-utils \
     unzip \
+    wget \
  && rm -rf /var/lib/apt/lists/*
 
 # add conda channels
@@ -24,4 +25,10 @@ RUN conda install --yes -c bioconda bowtie2==2.3.5.1
 # Downlod quast dbs
 RUN quast-download-gridss
 RUN quast-download-silva
-RUN quast-download-busco
+
+#RUN quast-download-busco
+# previous command fails so we manually download quast dbs
+# https://github.com/bioconda/bioconda-recipes/issues/18646
+RUN wget -O /opt/conda/lib/python3.7/site-packages/quast_libs/busco/bacteria.tar.gz https://busco.ezlab.org/v2/datasets/bacteria_odb9.tar.gz
+RUN wget -O /opt/conda/lib/python3.7/site-packages/quast_libs/busco/eukaryota.tar.gz https://busco.ezlab.org/v2/datasets/eukaryota_odb9.tar.gz
+RUN wget -O /opt/conda/lib/python3.7/site-packages/quast_libs/busco/fungi.tar.gz https://busco.ezlab.org/v2/datasets/fungi_odb9.tar.gz
