@@ -24,9 +24,8 @@ RUN conda install --yes -c bioconda abricate==0.5
 RUN conda install --yes -c bioconda trimmomatic==0.39
 RUN conda install --yes -c bioconda bwa==0.7.17
 
-# conda-forge installations
-RUN conda install --yes -c conda-forge r-essentials
-RUN conda install --yes -c conda-forge r-base
+# Install R and bioconductor
+RUN conda install --yes -c bioconda bioconductor-all
 
 # Downlod quast dbs
 RUN quast-download-gridss
