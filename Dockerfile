@@ -20,7 +20,7 @@ RUN conda install --yes -c bioconda quast==5.0.2
 RUN conda install --yes -c bioconda blast==2.5.0
 RUN conda install --yes -c bioconda unicycler==0.4.8
 RUN conda install --yes -c bioconda abricate==0.5
-RUN conda install --yes -c bioconda bowtie2==2.3.5.1
+#RUN conda install --yes -c bioconda bowtie2==2.3.5.1
 RUN conda install --yes -c bioconda trimmomatic==0.39
 RUN conda install --yes -c bioconda bwa==0.7.17
 
