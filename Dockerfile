@@ -25,7 +25,7 @@ RUN conda install --yes -c bioconda trimmomatic==0.39
 RUN conda install --yes -c bioconda bwa==0.7.17
 
 # Install R and ggplot2
-RUN conda install --yes -c r-ggplot2
+RUN conda install --yes -c bioconda r-ggplot2
 
 # Downlod quast dbs
 RUN quast-download-gridss
