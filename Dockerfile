@@ -24,6 +24,10 @@ RUN conda install --yes -c bioconda bowtie2==2.3.5.1
 RUN conda install --yes -c bioconda trimmomatic==0.39
 RUN conda install --yes -c bioconda bwa==0.7.17
 
+# conda-forge installations
+RUN conda install --yes -c conda-forge r-essentials
+RUN conda install --yes -c conda-forge r-base
+
 # Downlod quast dbs
 RUN quast-download-gridss
 RUN quast-download-silva
