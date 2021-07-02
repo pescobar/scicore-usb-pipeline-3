@@ -27,6 +27,9 @@ RUN conda install --yes -c bioconda bwa==0.7.17
 # Install R and ggplot2
 RUN conda install --yes -c bioconda r-ggplot2
 
+# Update samtools to latest version
+RUN conda install -c bioconda samtools==1.12
+
 # Downlod quast dbs
 RUN quast-download-gridss
 RUN quast-download-silva
